@@ -6,18 +6,22 @@ interface Position {
 }
 
 class Board {
-  private grid: Map<string, Tile>;
+  public grid: Map<string, Tile>;
   private startTile: Tile;
 
   constructor() {
     this.grid = new Map();
     // Creiamo una tessera iniziale
-    this.startTile = new Tile("START", {
-      top: FeatureType.CITY,
-      right: FeatureType.ROAD,
-      bottom: FeatureType.FIELD,
-      left: FeatureType.ROAD,
-    });
+    this.startTile = new Tile(
+      "START",
+      {
+        top: FeatureType.CITY,
+        right: FeatureType.ROAD,
+        bottom: FeatureType.FIELD,
+        left: FeatureType.ROAD,
+      },
+      "/tiles/START.jpg"
+    );
 
     // Posizioniamo la tessera iniziale al centro
     this.placeTile(this.startTile, { x: 0, y: 0 });

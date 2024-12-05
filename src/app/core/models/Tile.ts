@@ -15,16 +15,18 @@ interface TileSides {
 }
 
 class Tile {
-  private id: string;
+  public id: string;
   private sides: TileSides;
   private rotation: number; // 0, 90, 180, 270 gradi
   private hasMeeple: boolean;
+  public image: string;
 
-  constructor(id: string, sides: TileSides) {
+  constructor(id: string, sides: TileSides, image: string) {
     this.id = id;
     this.sides = sides;
     this.rotation = 0;
     this.hasMeeple = false;
+    this.image = image;
   }
 
   // Ruota la tessera di 90 gradi in senso orario
@@ -92,4 +94,6 @@ class Tile {
 //   left: FeatureType.FIELD,
 // });
 
-export { Tile, FeatureType };
+export { FeatureType };
+export type { TileSides };
+export { Tile };
